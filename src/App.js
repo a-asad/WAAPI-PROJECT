@@ -1,27 +1,29 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import useWebAnimations from "@wellyshen/use-web-animations";
 import './App.css';
 
 function App() {
-  const anim1 = useWebAnimations({
+  const moonAnim = useWebAnimations({
     keyframes: [
         {transform: 'rotate(0deg)'},
         {transform: 'rotate(360deg)'},
     ],
     timing: {
-      duration: 6000,
+      duration: 10000,
       iterations: Infinity,
+      delay:2,
       easing: "linear",
     }
   });
-  const bgAnim = useWebAnimations({
+  const bg = useRef();
+  const bgAnim = useWebAnimations({bg,
     keyframes: [
-      {backgroundPosition:'25% 0%'},
-      {backgroundPosition:'76% 100%'},
-      {backgroundPosition:'25% 0%'},
+      {backgroundPosition:'50% 50%'},
+      {backgroundPosition:'100% 100%'},
+      {backgroundPosition:'50% 50%'},
   ],
   timing: {
-    duration: 9000,
+    duration: 10000,
     iterations: Infinity,
     easing: "linear",
   }
@@ -74,13 +76,29 @@ function App() {
     easing: "ease-in-out",
   }
   });
+
+  const buildingAnim = useWebAnimations({
+    keyframes: [
+      {transform: 'translate(0px)'},
+      {transform: 'translate(-2400px)'},
+  ],
+  timing: {
+    duration: 10000,
+    iterations: Infinity,
+    easing: "linear",
+  }
+  });
   
+  useEffect(()=>{
+
+  },[])
+
   return (
     
     <div id="mainBg" ref={bgAnim.ref}>
-          <div class="moon" ref={anim1.ref}></div>
+          <div class="moon" ref={moonAnim.ref}></div>
 
-    <div class="skyline">
+    <div class="skyline" ref={buildingAnim.ref}>
         <div class="building1-shadow"></div>
         <div class="building1">
             <div class="building-left-half"></div>
