@@ -31,7 +31,7 @@ function App() {
   const roadAnim = useWebAnimations({
     keyframes: [
       {transform: 'translate(0px)'},
-      {transform: 'translate(-2400px)'},
+      {transform: 'translate(-1800px)'},
   ],
   timing: {
     duration: 12000,
@@ -66,8 +66,8 @@ function App() {
 
   const carAnim = useWebAnimations({
     keyframes: [
-      {left:'20%'},
-      {left:'40%'},
+      {left:'10%'},
+      {left:'30%'},
   ],
   timing: {
     duration: 30000,
@@ -115,7 +115,7 @@ function App() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   },[])
 
-  return (
+  return (      
     <div id="mainBg" ref={bgAnim.ref} onClick={speedUp}>
           <div className="moon" ref={moonAnim.ref}></div>
 
