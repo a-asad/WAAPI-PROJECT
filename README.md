@@ -1,4 +1,4 @@
-# ANIMATED WEBSITE USING WAAPI
+# ANIMATED GAME USING WAAPI
 A bunch of different animations, combined to make a little game, using Web Animations API.
 
 ## TECH STACK
