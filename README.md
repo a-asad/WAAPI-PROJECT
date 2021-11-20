@@ -1,5 +1,6 @@
 # ANIMATED GAME USING WAAPI
-A bunch of different animations, combined to make a little game, using Web Animations API.
+A bunch of different animations, combined to make a little game, using Web Animations API.  
+Click anywhere on screen to speed up the animations.
 
 ## TECH STACK
 - ReactJs
